@@ -1,0 +1,16 @@
+[package]
+name = "puzzle_solution_argument"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.72"
+ark-ec = "0.4.2"
+ark-ff = "0.4.2"
+ark-serialize = "0.4.2"
+digest = "0.10.7"
+rand = "0.8.5"
+
+[dev-dependencies]
+ark-bn254 = "0.4.0"
+sha2 = "0.10.7"
