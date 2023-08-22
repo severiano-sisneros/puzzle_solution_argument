@@ -16,6 +16,7 @@ ethers-signers = "2.0.8"
 k256 = "0.13.1"
 rand = "0.8.5"
 signature = "2.1.0"
+tokio = { version = "1.32.0", features = ["test-util", "macros"] }
 
 [dev-dependencies]
 ark-bn254 = "0.4.0"
