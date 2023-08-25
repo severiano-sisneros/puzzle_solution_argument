@@ -17,8 +17,8 @@ pub struct PuzzleSolution {
 /// The proof is a signed message that uses the solution digest as the secret key.
 /// To link the proof to the solver, the solver's Ethereum address is used as the message that is signed.
 pub struct PuzzleSolutionProof {
-    a: Signature,
-    m_s: Address,
+    pub a: Signature,
+    pub m_s: Address,
 }
 
 impl PuzzleSolution{
