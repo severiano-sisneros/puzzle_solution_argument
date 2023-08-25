@@ -71,7 +71,7 @@ impl PuzzleSolution{
 
 impl PuzzleSolutionProof {
     /// verify returns true if the proof is valid and false otherwise.
-    pub fn verify<H: Digest>(
+    pub fn verify(
         &self,
         solution_commitment: Address,
     ) -> Result<bool> {
@@ -117,7 +117,6 @@ impl PuzzleSolutionProof {
 // test for get_solution_root
 mod tests {
     use super::*;
-    use sha2;
     use ethers_signers::{Signer, LocalWallet};
     use tokio;
 
@@ -137,7 +136,7 @@ mod tests {
 
         assert!(
             puzzle_solution_proof
-                .verify::<sha2::Sha256>(puzzle_commitment)
+                .verify(puzzle_commitment)
                 .unwrap()
                 == true
         );
@@ -160,7 +159,7 @@ mod tests {
 
         assert!(
             puzzle_solution_proof
-                .verify::<sha2::Sha256>(puzzle_commitment)
+                .verify(puzzle_commitment)
                 .unwrap()
                 == true
         );
@@ -180,7 +179,7 @@ mod tests {
 
         assert!(
             wrong_puzzle_solution_proof
-                .verify::<sha2::Sha256>(puzzle_commitment)
+                .verify(puzzle_commitment)
                 .unwrap()
                 == false
         );
