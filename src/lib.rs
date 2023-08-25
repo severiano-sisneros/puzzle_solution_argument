@@ -14,7 +14,8 @@ pub struct PuzzleSolution {
 }
 
 /// PuzzleSolutionProof is a struct that contains a proof that a given solution is a valid solution to a puzzle.
-/// The proof is essentially a Schnorr proof of knowledge of the discrete logarithm of a commitment to the solution.
+/// The proof is a signed message that uses the solution digest as the secret key.
+/// To link the proof to the solver, the solver's Ethereum address is used as the message that is signed.
 pub struct PuzzleSolutionProof {
     a: Signature,
     m_s: Address,
